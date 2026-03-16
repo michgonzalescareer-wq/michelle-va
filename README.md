@@ -6,20 +6,35 @@
 <title>Michelle Gonzales | Administrative & Financial Operations</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 /* --- Reset & Base --- */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Poppins',sans-serif; background:#0b2a4a; color:white; line-height:1.6; }
+body { font-family:'Poppins',sans-serif; background:#0b2a4a; color:white; line-height:1.6; overflow-x: hidden; }
 html { scroll-behavior:smooth; }
-section { max-width:1200px; margin:auto; padding:80px 20px; opacity:0; transform: translateY(40px); transition: all 0.6s ease; }
+
+/* --- Layout Centering Logic --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+section { 
+    width: 100%;
+    padding: 80px 0; 
+    opacity:0; 
+    transform: translateY(40px); 
+    transition: all 0.6s ease; 
+}
+
 section.visible { opacity:1; transform: translateY(0); }
 h2 { font-family:'Roboto Slab',serif; text-align:center; margin-bottom:40px; color:#7cb9ff; font-size:2rem; }
 
 /* --- NAVIGATION --- */
-nav { background:#081f36; position:sticky; top:0; padding:15px; text-align:center; z-index:999; border-bottom:2px solid #1a73e8; }
+nav { background:#081f36; position:sticky; top:0; padding:15px; text-align:center; z-index:999; border-bottom:2px solid #1a73e8; width: 100%; }
 nav a { color:white; margin:0 12px; text-decoration:none; font-size:0.75rem; font-weight:600; text-transform:uppercase; transition: color 0.3s; }
 nav a:hover { color:#1a73e8; }
 
@@ -35,10 +50,11 @@ header {
                 url("hero/hero_bg.jpg"); 
     background-size:cover; 
     background-position:center; 
+    width: 100%;
 }
-header h1 { font-size:3.5rem; margin-bottom:10px; }
-header p { opacity: 0.9; font-size: 1.1rem; }
-.hero-buttons { margin-top:25px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
+header h1 { font-size:3.5rem; margin-bottom:10px; padding: 0 20px; }
+header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
+.hero-buttons { margin-top:25px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; padding: 0 20px; }
 .hero-buttons a { padding:12px 25px; border-radius:40px; text-decoration:none; color:white; font-weight:600; transition: transform 0.3s; display: flex; align-items: center; gap: 8px; }
 .hero-buttons a:hover { transform: scale(1.05); }
 .linkedin-btn { background:#0A66C2; }
@@ -46,7 +62,7 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .book-btn { background:#1a73e8; }
 
 /* --- ABOUT --- */
-#about { background:white; color:#0b2a4a; border-radius:20px; margin-top:-40px; padding:50px; box-shadow:0 10px 30px rgba(0,0,0,.3); display:flex; flex-wrap:wrap; align-items:center; gap:40px; }
+.about-box { background:white; color:#0b2a4a; border-radius:20px; margin-top:-40px; padding:50px; box-shadow:0 10px 30px rgba(0,0,0,.3); display:flex; flex-wrap:wrap; align-items:center; gap:40px; }
 .about-img { width:250px; height:250px; object-fit:cover; border-radius:20px; flex-shrink:0; transition: transform 0.3s; }
 .about-img:hover { transform: scale(1.05); }
 .about-text { flex:1; }
@@ -54,7 +70,7 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .about-text p { margin-top:10px; }
 
 /* --- PROFESSIONAL ADVANTAGE --- */
-#value { background:#15417c; border-radius:20px; padding:60px 40px; text-align:center; }
+#value-inner { background:#15417c; border-radius:20px; padding:60px 40px; text-align:center; width: 100%; }
 .prop-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin-top:30px; text-align:left; }
 .check { display:flex; gap:15px; background: rgba(255,255,255,0.15); padding:15px; border-radius:15px; transition: transform 0.3s; }
 .check:hover { transform: translateY(-5px); }
@@ -68,7 +84,7 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .card h3 { padding: 0 15px; margin-bottom:10px; }
 .card p { padding: 0 15px 25px 15px; font-size: 0.9rem; }
 
-/* --- PORTFOLIO / SAMPLE WORKS --- */
+/* --- PORTFOLIO --- */
 .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
 .portfolio-item { background:white; border-radius:15px; overflow:hidden; color:#0b2a4a; box-shadow:0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
 .portfolio-item:hover { transform: scale(1.02); }
@@ -90,41 +106,17 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .tool:hover { transform: translateY(-5px); }
 .tool img { height:40px; margin-bottom:8px; }
 
-/* --- CERTIFICATIONS SECTION (FORCED 2 ROWS) --- */
-#certifications { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 60px 40px; margin-top: 40px; }
-.cert-grid { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
-}
-.cert-card { 
-    background: white; 
-    color: #0b2a4a; 
-    padding: 15px; 
-    border-radius: 12px; 
-    text-align: center; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-    transition: transform 0.3s; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+/* --- CERTIFICATIONS --- */
+#cert-inner { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 60px 40px; width: 100%; }
+.cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.cert-card { background: white; color: #0b2a4a; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
 .cert-card:hover { transform: translateY(-5px); }
 .cert-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; border-radius: 8px; border: 1px solid #eee; }
 .cert-card h3 { font-size: 0.85rem; color: #1a73e8; line-height: 1.2; font-weight: 600; }
 .cert-card p { font-size: 0.75rem; margin-top: 5px; opacity: 0.7; }
 
 /* --- FAQ --- */
-.faq { max-width:800px; margin:auto; }
-.faq-item { background:white; color:#0b2a4a; margin-bottom:15px; border-radius:10px; overflow:hidden; cursor:pointer; }
-.faq-question { padding:20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
-.faq-answer { max-height:0; overflow:hidden; padding:0 20px; transition: max-height 0.3s ease, padding 0.3s ease; }
-.faq-item.active .faq-answer { max-height:1000px; padding:20px; }
-.faq-question i { transition: transform 0.3s; }
-.faq-item.active .faq-question i { transform: rotate(180deg); }
-
-/* --- FAQ --- */
-.faq { max-width:800px; margin:auto; }
+.faq-container { max-width:800px; margin:auto; }
 .faq-item { background:white; color:#0b2a4a; margin-bottom:15px; border-radius:10px; overflow:hidden; cursor:pointer; }
 .faq-question { padding:20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
 .faq-answer { max-height:0; overflow:hidden; padding:0 20px; transition: max-height 0.3s ease, padding 0.3s ease; }
@@ -133,9 +125,10 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .faq-item.active .faq-question i { transform: rotate(180deg); }
 
 /* --- CTA & CONTACT --- */
-.cta { background: linear-gradient(135deg, #1a73e8 0%, #0b2a4a 100%); padding: 100px 40px; border-radius: 30px; text-align: center; margin: 80px 20px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-.cta h2 { color: white; font-size: 2.5rem; margin-bottom: 15px; }
-.cta p { font-size: 1.1rem; margin-bottom: 35px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-wrapper { width: 100%; padding: 80px 20px; }
+.cta-box { background: linear-gradient(135deg, #1a73e8 0%, #0b2a4a 100%); padding: 100px 40px; border-radius: 30px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); max-width: 1200px; margin: 0 auto; }
+.cta-box h2 { color: white; font-size: 2.5rem; margin-bottom: 15px; }
+.cta-box p { font-size: 1.1rem; margin-bottom: 35px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
 .btn-cta { background: #25D366; color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
 .btn-cta:hover { transform: scale(1.1) translateY(-3px); background: #20ba5a; }
 .cta-contact-grid { display: flex; justify-content: center; gap: 50px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); flex-wrap: wrap; }
@@ -147,14 +140,19 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .whatsapp-float { position: fixed; bottom:25px; right:25px; background:#25D366; color:white; font-size:26px; padding:15px 18px; border-radius:50%; box-shadow:0 6px 15px rgba(0,0,0,0.3); z-index:999; display:flex; align-items:center; justify-content:center; text-decoration:none; transition: transform 0.3s; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
+/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
-  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
+@media (max-width: 768px) {
+    .about-box { padding: 30px; flex-direction: column; text-align: center; }
+    .about-text h2 { text-align: center; }
+    header h1 { font-size: 2.5rem; }
+}
 @media (max-width: 600px) {
-  .cta-contact-grid { flex-direction: column; gap: 20px; }
-  header h1 { font-size: 2.2rem; }
-  .cert-grid { grid-template-columns: 1fr; }
+    .cta-contact-grid { flex-direction: column; gap: 20px; }
+    header h1 { font-size: 2.2rem; }
+    .cert-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -162,208 +160,218 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 <body>
 
 <nav>
-  <a href="#about">Profile</a>
-  <a href="#services">Expertise</a>
-  <a href="#portfolio">Sample Works</a>
-  <a href="#workflow">Workflow</a>
-  <a href="#tools">Tools</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
+    <a href="#about">Profile</a>
+    <a href="#services">Expertise</a>
+    <a href="#portfolio">Sample Works</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#tools">Tools</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <header>
-  <h1>Michelle Gonzales</h1>
-  <p>Administrative • Accounts Receivable • Bookkeeping • Payroll Support</p>
-  <div class="hero-buttons">
-    <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://wa.me/639654033089" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <a href="https://cal.com/michgonzalesva" target="_blank" class="book-btn"><i class="fas fa-calendar"></i> Book Discovery Call</a>
-  </div>
+    <h1>Michelle Gonzales</h1>
+    <p>Administrative • Accounts Receivable • Bookkeeping • Payroll Support</p>
+    <div class="hero-buttons">
+        <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://wa.me/639654033089" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://cal.com/michgonzalesva" target="_blank" class="book-btn"><i class="fas fa-calendar"></i> Book Discovery Call</a>
+    </div>
 </header>
 
 <section id="about">
-  <img src="gonzales/Gonzales_Michelle.jpg" class="about-img" alt="Michelle Gonzales">
-  <div class="about-text">
-    <h2>Operational Partner</h2>
-    <p>I specialize in streamlining back-office operations and financial documentation. While I have a strong command of accounting fundamentals, I am currently onboarding QuickBooks into my service suite to provide clients with modern, cloud-based reporting and real-time financial tracking.</p>
-  </div>
+    <div class="container">
+        <div class="about-box">
+            <img src="gonzales/Gonzales_Michelle.jpg" class="about-img" alt="Michelle Gonzales">
+            <div class="about-text">
+                <h2>Operational Partner</h2>
+                <p>I specialize in streamlining back-office operations and financial documentation. While I have a strong command of accounting fundamentals, I am currently onboarding QuickBooks into my service suite to provide clients with modern, cloud-based reporting and real-time financial tracking.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="value">
-  <h2>Professional Advantage</h2>
-  <div class="prop-grid">
-    <div class="check"><i class="fas fa-check-circle"></i><div><h3>Corporate Discipline</h3><p>Structured documentation and organized records.</p></div></div>
-    <div class="check"><i class="fas fa-check-circle"></i><div><h3>Process Organization</h3><p>Reliable workflows for business operations.</p></div></div>
-    <div class="check"><i class="fas fa-check-circle"></i><div><h3>Reliable Communication</h3><p>Professional support across teams.</p></div></div>
-  </div>
+    <div class="container">
+        <div id="value-inner">
+            <h2>Professional Advantage</h2>
+            <div class="prop-grid">
+                <div class="check"><i class="fas fa-check-circle"></i><div><h3>Corporate Discipline</h3><p>Structured documentation and organized records.</p></div></div>
+                <div class="check"><i class="fas fa-check-circle"></i><div><h3>Process Organization</h3><p>Reliable workflows for business operations.</p></div></div>
+                <div class="check"><i class="fas fa-check-circle"></i><div><h3>Reliable Communication</h3><p>Professional support across teams.</p></div></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="services">
-  <h2>Core Expertise</h2>
-  <div class="grid">
-    <div class="card"><img src="expertise/admin.jpg" alt="Executive Admin"><h3>Executive Administration</h3><p>Email organization, scheduling, document management.</p></div>
-    <div class="card"><img src="expertise/bookkeeping.jpg" alt="Bookkeeping"><h3>Bookkeeping Support</h3><p>Transaction documentation and financial record organization. (Learning QuickBooks)</p></div>
-    <div class="card"><img src="expertise/ar.jpg" alt="Accounts Receivable"><h3>Accounts Receivable</h3><p>Invoice tracking and payment monitoring.</p></div>
-    <div class="card"><img src="expertise/payroll.jpg" alt="Payroll"><h3>Payroll Documentation</h3><p>Organizing payroll records and salary tracking.</p></div>
-  </div>
+    <div class="container">
+        <h2>Core Expertise</h2>
+        <div class="grid">
+            <div class="card"><img src="expertise/admin.jpg" alt="Executive Admin"><h3>Executive Administration</h3><p>Email organization, scheduling, document management.</p></div>
+            <div class="card"><img src="expertise/bookkeeping.jpg" alt="Bookkeeping"><h3>Bookkeeping Support</h3><p>Transaction documentation and financial record organization. (Learning QuickBooks)</p></div>
+            <div class="card"><img src="expertise/ar.jpg" alt="Accounts Receivable"><h3>Accounts Receivable</h3><p>Invoice tracking and payment monitoring.</p></div>
+            <div class="card"><img src="expertise/payroll.jpg" alt="Payroll"><h3>Payroll Documentation</h3><p>Organizing payroll records and salary tracking.</p></div>
+        </div>
+    </div>
 </section>
 
 <section id="portfolio">
-  <h2>Sample Works & Reports</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <div class="portfolio-img-container"><img src="portfolio/pl_statement.jpg" alt="P&L Statement"></div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">QuickBooks Online</span>
-        <h3>Profit & Loss Statement</h3>
-        <p>Generated monthly financial reports to track net income and operating expenses accurately.</p>
-      </div>
+    <div class="container">
+        <h2>Sample Works & Reports</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-img-container"><img src="portfolio/pl_statement.jpg" alt="P&L Statement"></div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">QuickBooks Online</span>
+                    <h3>Profit & Loss Statement</h3>
+                    <p>Generated monthly financial reports to track net income and operating expenses accurately.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img-container"><img src="portfolio/expenses.jpg" alt="Expense Recording"></div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">QuickBooks Online</span>
+                    <h3>Expense Categorization</h3>
+                    <p>Organization of daily transactions into proper chart of accounts for tax readiness.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img-container"><img src="portfolio/ar_aging.jpg" alt="A/R Aging"></div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Financial Tracking</span>
+                    <h3>A/R Aging Reports</h3>
+                    <p>Monitoring outstanding invoices to ensure healthy cash flow and timely payments.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="portfolio-item">
-      <div class="portfolio-img-container"><img src="portfolio/expenses.jpg" alt="Expense Recording"></div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">QuickBooks Online</span>
-        <h3>Expense Categorization</h3>
-        <p>Organization of daily transactions into proper chart of accounts for tax readiness.</p>
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <div class="portfolio-img-container"><img src="portfolio/ar_aging.jpg" alt="A/R Aging"></div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">Financial Tracking</span>
-        <h3>A/R Aging Reports</h3>
-        <p>Monitoring outstanding invoices to ensure healthy cash flow and timely payments.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section id="workflow">
-  <h2>Client Onboarding Workflow</h2>
-  <div class="flow">
-    <div class="flow-card"><div class="step">1</div><h3>Discovery Call</h3><p>Discuss business workflow and needs.</p></div>
-    <div class="flow-card"><div class="step">2</div><h3>System Setup</h3><p>Secure access and operational alignment.</p></div>
-    <div class="flow-card"><div class="step">3</div><h3>Trial Week</h3><p>1-week paid trial collaboration.</p></div>
-    <div class="flow-card"><div class="step">4</div><h3>Full Support</h3><p>Long-term administrative support.</p></div>
-  </div>
+    <div class="container">
+        <h2>Client Onboarding Workflow</h2>
+        <div class="flow">
+            <div class="flow-card"><div class="step">1</div><h3>Discovery Call</h3><p>Discuss business workflow and needs.</p></div>
+            <div class="flow-card"><div class="step">2</div><h3>System Setup</h3><p>Secure access and operational alignment.</p></div>
+            <div class="flow-card"><div class="step">3</div><h3>Trial Week</h3><p>1-week paid trial collaboration.</p></div>
+            <div class="flow-card"><div class="step">4</div><h3>Full Support</h3><p>Long-term administrative support.</p></div>
+        </div>
+    </div>
 </section>
 
 <section id="tools">
-  <h2>Tech Stack</h2>
-  <div class="tools">
-    <div class="tool"><img src="logos/Quickbooks.jpg" alt="QuickBooks"><p>QuickBooks (Learning)</p></div>
-    <div class="tool"><img src="logos/Microsoft_Excel.jpg" alt="Excel"><p>Excel</p></div>
-    <div class="tool"><img src="logos/Google_Workspace.jpg" alt="Google Workspace"><p>Google Workspace</p></div>
-    <div class="tool"><img src="logos/ChatGPT.jpg" alt="ChatGPT"><p>ChatGPT</p></div>
-    <div class="tool"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
-    <div class="tool"><img src="logos/Microsoft_365.jpg" alt="Microsoft 365"><p>Microsoft 365</p></div>
-  </div>
+    <div class="container">
+        <h2>Tech Stack</h2>
+        <div class="tools">
+            <div class="tool"><img src="logos/Quickbooks.jpg" alt="QuickBooks"><p>QuickBooks (Learning)</p></div>
+            <div class="tool"><img src="logos/Microsoft_Excel.jpg" alt="Excel"><p>Excel</p></div>
+            <div class="tool"><img src="logos/Google_Workspace.jpg" alt="Google Workspace"><p>Google Workspace</p></div>
+            <div class="tool"><img src="logos/ChatGPT.jpg" alt="ChatGPT"><p>ChatGPT</p></div>
+            <div class="tool"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
+            <div class="tool"><img src="logos/Microsoft_365.jpg" alt="Microsoft 365"><p>Microsoft 365</p></div>
+        </div>
+    </div>
 </section>
 
 <section id="certifications">
-  <h2>Professional Certifications</h2>
-  <div class="cert-grid">
-    
-    <div class="cert-card">
-      <img src="certificates/Diploma_in_Financial_Accounting.png" alt="Diploma in Financial Accounting">
-      <h3>Diploma in Financial Accounting</h3>
-      <p>Alison</p>
+    <div class="container">
+        <div id="cert-inner">
+            <h2>Professional Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <img src="certificates/Diploma_in_Financial_Accounting.png" alt="Diploma in Financial Accounting">
+                    <h3>Diploma in Financial Accounting</h3>
+                    <p>Alison</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Accounting_Basics.png" alt="Accounting Basics">
+                    <h3>Accounting Basics</h3>
+                    <p>Alison</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Introduction_to_Bookkeeping.png" alt="Introduction to Bookkeeping">
+                    <h3>Introduction to Bookkeeping</h3>
+                    <p>TESDA Online Program</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Journalizing_Transactions.png" alt="Journalizing Transactions">
+                    <h3>Journalizing Transactions</h3>
+                    <p>TESDA Online Program</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Accounts_Receivable_Management.png" alt="Accounts Receivable Management">
+                    <h3>Accounts Receivable Management</h3>
+                    <p>Alison</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Google_Workspace_Features_and_Applications.png" alt="Google Workspace">
+                    <h3>Google Workspace: Features & Apps</h3>
+                    <p>Alison</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Gmail_Calendar_for_Business_Masterclass.png" alt="Gmail Calendar Masterclass">
+                    <h3>Gmail & Calendar for Business</h3>
+                    <p>Alison</p>
+                </div>
+                <div class="cert-card">
+                    <img src="certificates/Canva_Visual_Suite.png" alt="Canva Visual Suite">
+                    <h3>Meet Canva's Visual Suite</h3>
+                    <p>Canva Design School</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="cert-card">
-      <img src="certificates/Accounting_Basics.png" alt="Accounting Basics">
-      <h3>Accounting Basics</h3>
-      <p>Alison</p>
-    </div>
-
-    <div class="cert-card">
-      <img src="certificates/Introduction_to_Bookkeeping.png" alt="Introduction to Bookkeeping">
-      <h3>Introduction to Bookkeeping</h3>
-      <p>TESDA Online Program</p>
-    </div>
-
-    <div class="cert-card">
-      <img src="certificates/Journalizing_Transactions.png" alt="Journalizing Transactions">
-      <h3>Journalizing Transactions</h3>
-      <p>TESDA Online Program</p>
-    </div>
-
-    <div class="cert-card">
-      <img src="certificates/Accounts_Receivable_Management.png" alt="Accounts Receivable Management">
-      <h3>Accounts Receivable Management</h3>
-      <p>Alison</p>
-    </div>
-
-    <div class="cert-card">
-      <img src="certificates/Google_Workspace_Features_and_Applications.png" alt="Google Workspace">
-      <h3>Google Workspace: Features & Apps</h3>
-      <p>Alison</p>
-    </div>
-
-    <div class="cert-card">
-      <img src="certificates/Gmail_Calendar_for_Business_Masterclass.png" alt="Gmail Calendar Masterclass">
-      <h3>Gmail & Calendar for Business</h3>
-      <p>Alison</p>
-    </div>
-
-    <div class="cert-card">
-      <img src="certificates/Canva_Visual_Suite.png" alt="Canva Visual Suite">
-      <h3>Meet Canva's Visual Suite</h3>
-      <p>Canva Design School</p>
-    </div>
-
-  </div>
 </section>
 
 <section id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq">
-    <div class="faq-item"><div class="faq-question"><span>Do you offer trial work?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes. I offer a 1-week paid trial to ensure workflow compatibility.</div></div>
-    
-    <div class="faq-item">
-        <div class="faq-question"><span>How do you handle QuickBooks if you are currently learning it?</span><i class="fas fa-chevron-down"></i></div>
-        <div class="faq-answer">While I am perfecting the software interface, I have a strong foundation in <strong>Accounting Fundamentals</strong>. I understand debits, credits, and the accounting cycle. The "learning" is simply mastering the QuickBooks system shortcuts—the math and accuracy behind your reports remain my top priority.</div>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item"><div class="faq-question"><span>Do you offer trial work?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes. I offer a 1-week paid trial to ensure workflow compatibility.</div></div>
+            <div class="faq-item">
+                <div class="faq-question"><span>How do you handle QuickBooks if you are currently learning it?</span><i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">While I am perfecting the software interface, I have a strong foundation in <strong>Accounting Fundamentals</strong>. I understand debits, credits, and the accounting cycle. The "learning" is simply mastering the QuickBooks system shortcuts—the math and accuracy behind your reports remain my top priority.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>What is the financial advantage of hiring you now?</span><i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Hiring me at this stage allows you to get high-level administrative support at a <strong>growth-friendly rate</strong>. You receive an operational partner who already understands financial logic, saving you the high cost of a senior firm while getting the same level of care.</div>
+            </div>
+            <div class="faq-item"><div class="faq-question"><span>Which timezones do you support?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">I work with businesses across US, UK, and Australian timezones.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>Payment methods?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Payments can be made via bank transfer or PayPal depending on agreement.</div></div>
+        </div>
     </div>
-
-    <div class="faq-item">
-        <div class="faq-question"><span>What is the financial advantage of hiring you now?</span><i class="fas fa-chevron-down"></i></div>
-        <div class="faq-answer">Hiring me at this stage allows you to get high-level administrative support at a <strong>growth-friendly rate</strong>. You receive an operational partner who already understands financial logic, saving you the high cost of a senior firm while getting the same level of care.</div>
-    </div>
-
-    <div class="faq-item"><div class="faq-question"><span>Which timezones do you support?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">I work with businesses across US, UK, and Australian timezones.</div></div>
-    <div class="faq-item"><div class="faq-question"><span>Payment methods?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Payments can be made via bank transfer or PayPal depending on agreement.</div></div>
-  </div>
 </section>
 
-<section class="cta" id="contact">
-  <h2>Let's Organize Your Growth</h2>
-  <p>Delegate your administrative burden and focus on scaling your business. Ready to see how we can work together?</p>
-  
-  <a href="https://cal.com/michgonzalesva" target="_blank" class="btn-cta">
-    <i class="fas fa-calendar-check"></i> Book Your Discovery Call
-  </a>
-
-  <div class="cta-contact-grid">
-    <a href="mailto:mitchgonzales.career@gmail.com" class="cta-contact-item">
-      <i class="fas fa-envelope"></i> mitchgonzales.career@gmail.com
-    </a>
-    <a href="https://wa.me/639654033089" target="_blank" class="cta-contact-item">
-      <i class="fab fa-whatsapp"></i> +63 965 403 3089
-    </a>
-    <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="cta-contact-item">
-      <i class="fab fa-linkedin"></i> LinkedIn Profile
-    </a>
-  </div>
-</section>
+<div class="cta-wrapper" id="contact">
+    <div class="cta-box">
+        <h2>Let's Organize Your Growth</h2>
+        <p>Delegate your administrative burden and focus on scaling your business. Ready to see how we can work together?</p>
+        <a href="https://cal.com/michgonzalesva" target="_blank" class="btn-cta">
+            <i class="fas fa-calendar-check"></i> Book Your Discovery Call
+        </a>
+        <div class="cta-contact-grid">
+            <a href="mailto:mitchgonzales.career@gmail.com" class="cta-contact-item">
+                <i class="fas fa-envelope"></i> mitchgonzales.career@gmail.com
+            </a>
+            <a href="https://wa.me/639654033089" target="_blank" class="cta-contact-item">
+                <i class="fab fa-whatsapp"></i> +63 965 403 3089
+            </a>
+            <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="cta-contact-item">
+                <i class="fab fa-linkedin"></i> LinkedIn Profile
+            </a>
+        </div>
+    </div>
+</div>
 
 <a href="https://wa.me/639654033089" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section, .cta-wrapper");
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add("visible"); } });
-},{ threshold: 0.15 });
+},{ threshold: 0.1 });
 sections.forEach(section=>observer.observe(section));
 
 document.querySelectorAll(".faq-item").forEach(item=>{
