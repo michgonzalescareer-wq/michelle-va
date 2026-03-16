@@ -23,12 +23,25 @@ nav { background:#081f36; position:sticky; top:0; padding:15px; text-align:cente
 nav a { color:white; margin:0 12px; text-decoration:none; font-size:0.75rem; font-weight:600; text-transform:uppercase; transition: color 0.3s; }
 nav a:hover { color:#1a73e8; }
 
-/* --- HERO --- */
-header { height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background: linear-gradient(rgba(11,42,74,0.85),rgba(11,42,74,0.85)), url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600"); background-size:cover; background-position:center; }
-header h1 { font-size:3rem; margin-bottom:10px; }
-header p { opacity:.9; }
+/* --- HERO SECTION (UPDATED) --- */
+header { 
+    height:70vh; 
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+    justify-content:center; 
+    text-align:center; 
+    /* This matches your file name 'hero_bg' and folder 'hero' */
+    /* The gradient creates the dark blue professional overlay */
+    background: linear-gradient(rgba(11, 42, 74, 0.88), rgba(11, 42, 74, 0.88)), 
+                url("hero/hero_bg.jpg"); 
+    background-size:cover; 
+    background-position:center; 
+}
+header h1 { font-size:3.5rem; margin-bottom:10px; }
+header p { opacity: 0.9; font-size: 1.1rem; }
 .hero-buttons { margin-top:25px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
-.hero-buttons a { padding:12px 22px; border-radius:40px; text-decoration:none; color:white; font-weight:600; transition: transform 0.3s; }
+.hero-buttons a { padding:12px 25px; border-radius:40px; text-decoration:none; color:white; font-weight:600; transition: transform 0.3s; display: flex; align-items: center; gap: 8px; }
 .hero-buttons a:hover { transform: scale(1.05); }
 .linkedin-btn { background:#0A66C2; }
 .whatsapp-btn { background:#25D366; }
@@ -137,6 +150,7 @@ header p { opacity:.9; }
   <div class="about-text">
     <h2>Operational Partner</h2>
     <p>I specialize in streamlining back-office operations and financial documentation. While I have a strong command of accounting fundamentals, I am currently onboarding QuickBooks into my service suite to provide clients with modern, cloud-based reporting and real-time financial tracking.</p>
+    
     
   </div>
 </section>
