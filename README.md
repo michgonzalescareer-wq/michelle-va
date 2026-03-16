@@ -23,7 +23,7 @@ nav { background:#081f36; position:sticky; top:0; padding:15px; text-align:cente
 nav a { color:white; margin:0 12px; text-decoration:none; font-size:0.75rem; font-weight:600; text-transform:uppercase; transition: color 0.3s; }
 nav a:hover { color:#1a73e8; }
 
-/* --- HERO SECTION (UPDATED) --- */
+/* --- HERO SECTION --- */
 header { 
     height:70vh; 
     display:flex; 
@@ -31,8 +31,6 @@ header {
     align-items:center; 
     justify-content:center; 
     text-align:center; 
-    /* This matches your file name 'hero_bg' and folder 'hero' */
-    /* The gradient creates the dark blue professional overlay */
     background: linear-gradient(rgba(11, 42, 74, 0.88), rgba(11, 42, 74, 0.88)), 
                 url("hero/hero_bg.jpg"); 
     background-size:cover; 
@@ -92,6 +90,39 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .tool:hover { transform: translateY(-5px); }
 .tool img { height:40px; margin-bottom:8px; }
 
+/* --- CERTIFICATIONS SECTION (FORCED 2 ROWS) --- */
+#certifications { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 60px 40px; margin-top: 40px; }
+.cert-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+.cert-card { 
+    background: white; 
+    color: #0b2a4a; 
+    padding: 15px; 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cert-card:hover { transform: translateY(-5px); }
+.cert-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; border-radius: 8px; border: 1px solid #eee; }
+.cert-card h3 { font-size: 0.85rem; color: #1a73e8; line-height: 1.2; font-weight: 600; }
+.cert-card p { font-size: 0.75rem; margin-top: 5px; opacity: 0.7; }
+
+/* --- FAQ --- */
+.faq { max-width:800px; margin:auto; }
+.faq-item { background:white; color:#0b2a4a; margin-bottom:15px; border-radius:10px; overflow:hidden; cursor:pointer; }
+.faq-question { padding:20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
+.faq-answer { max-height:0; overflow:hidden; padding:0 20px; transition: max-height 0.3s ease, padding 0.3s ease; }
+.faq-item.active .faq-answer { max-height:1000px; padding:20px; }
+.faq-question i { transition: transform 0.3s; }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+
 /* --- FAQ --- */
 .faq { max-width:800px; margin:auto; }
 .faq-item { background:white; color:#0b2a4a; margin-bottom:15px; border-radius:10px; overflow:hidden; cursor:pointer; }
@@ -116,9 +147,14 @@ header p { opacity: 0.9; font-size: 1.1rem; }
 .whatsapp-float { position: fixed; bottom:25px; right:25px; background:#25D366; color:white; font-size:26px; padding:15px 18px; border-radius:50%; box-shadow:0 6px 15px rgba(0,0,0,0.3); z-index:999; display:flex; align-items:center; justify-content:center; text-decoration:none; transition: transform 0.3s; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
+@media (max-width: 1024px) {
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 600px) {
   .cta-contact-grid { flex-direction: column; gap: 20px; }
   header h1 { font-size: 2.2rem; }
+  .cert-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -131,6 +167,7 @@ header p { opacity: 0.9; font-size: 1.1rem; }
   <a href="#portfolio">Sample Works</a>
   <a href="#workflow">Workflow</a>
   <a href="#tools">Tools</a>
+  <a href="#certifications">Certifications</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -150,8 +187,6 @@ header p { opacity: 0.9; font-size: 1.1rem; }
   <div class="about-text">
     <h2>Operational Partner</h2>
     <p>I specialize in streamlining back-office operations and financial documentation. While I have a strong command of accounting fundamentals, I am currently onboarding QuickBooks into my service suite to provide clients with modern, cloud-based reporting and real-time financial tracking.</p>
-    
-    
   </div>
 </section>
 
@@ -223,6 +258,61 @@ header p { opacity: 0.9; font-size: 1.1rem; }
     <div class="tool"><img src="logos/ChatGPT.jpg" alt="ChatGPT"><p>ChatGPT</p></div>
     <div class="tool"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
     <div class="tool"><img src="logos/Microsoft_365.jpg" alt="Microsoft 365"><p>Microsoft 365</p></div>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Professional Certifications</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="certificates/Diploma_in_Financial_Accounting.png" alt="Diploma in Financial Accounting">
+      <h3>Diploma in Financial Accounting</h3>
+      <p>Alison</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Accounting_Basics.png" alt="Accounting Basics">
+      <h3>Accounting Basics</h3>
+      <p>Alison</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Introduction_to_Bookkeeping.png" alt="Introduction to Bookkeeping">
+      <h3>Introduction to Bookkeeping</h3>
+      <p>TESDA Online Program</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Journalizing_Transactions.png" alt="Journalizing Transactions">
+      <h3>Journalizing Transactions</h3>
+      <p>TESDA Online Program</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Accounts_Receivable_Management.png" alt="Accounts Receivable Management">
+      <h3>Accounts Receivable Management</h3>
+      <p>Alison</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Google_Workspace_Features_and_Applications.png" alt="Google Workspace">
+      <h3>Google Workspace: Features & Apps</h3>
+      <p>Alison</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Gmail_Calendar_for_Business_Masterclass.png" alt="Gmail Calendar Masterclass">
+      <h3>Gmail & Calendar for Business</h3>
+      <p>Alison</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="certificates/Canva_Visual_Suite.png" alt="Canva Visual Suite">
+      <h3>Meet Canva's Visual Suite</h3>
+      <p>Canva Design School</p>
+    </div>
+
   </div>
 </section>
 
