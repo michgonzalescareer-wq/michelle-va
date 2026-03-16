@@ -3,273 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michelle Gonzales | Global Administrative & Payroll Expert</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Michelle Gonzales | Administrative & Financial Operations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
-/* Reset & Base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Poppins', sans-serif; background: #0b2a4a; color: #ffffff; line-height: 1.6; }
+/* --- Reset & Base --- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins',sans-serif; background:#0b2a4a; color:white; line-height:1.6; }
+html { scroll-behavior:smooth; }
+section { max-width:1200px; margin:auto; padding:80px 20px; opacity:0; transform: translateY(40px); transition: all 0.6s ease; }
+section.visible { opacity:1; transform: translateY(0); }
+h2 { font-family:'Roboto Slab',serif; text-align:center; margin-bottom:40px; color:#7cb9ff; font-size:2rem; }
 
-/* Animations */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* --- NAVIGATION --- */
+nav { background:#081f36; position:sticky; top:0; padding:15px; text-align:center; z-index:999; border-bottom:2px solid #1a73e8; }
+nav a { color:white; margin:0 12px; text-decoration:none; font-size:0.75rem; font-weight:600; text-transform:uppercase; transition: color 0.3s; }
+nav a:hover { color:#1a73e8; }
 
-/* Navigation */
-nav { background: rgba(8, 31, 54, 0.98); backdrop-filter: blur(10px); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #1a73e8; }
-nav a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; font-weight: 600; }
+/* --- HERO --- */
+header { height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background: linear-gradient(rgba(11,42,74,0.85),rgba(11,42,74,0.85)), url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600"); background-size:cover; background-position:center; }
+header h1 { font-size:3rem; margin-bottom:10px; }
+header p { opacity:.9; }
+.hero-buttons { margin-top:25px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
+.hero-buttons a { padding:12px 22px; border-radius:40px; text-decoration:none; color:white; font-weight:600; transition: transform 0.3s; }
+.hero-buttons a:hover { transform: scale(1.05); }
+.linkedin-btn { background:#0A66C2; }
+.whatsapp-btn { background:#25D366; }
+.book-btn { background:#1a73e8; }
 
-/* Header */
-header {
-  height: 60vh;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  background: linear-gradient(rgba(11, 42, 74, 0.8), rgba(11, 42, 74, 0.8)), url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?w=1200');
-  background-size: cover; background-position: center; text-align: center; padding: 0 20px;
-}
-header h1 { font-size: clamp(35px, 7vw, 60px); font-family: 'Roboto Slab', serif; margin-bottom: 10px; }
-header p { font-size: 1.2rem; color: #7cb9ff; }
+/* --- ABOUT / OPERATIONAL PARTNER --- */
+#about { background:white; color:#0b2a4a; border-radius:20px; margin-top:-40px; padding:50px; box-shadow:0 10px 30px rgba(0,0,0,.3); display:flex; flex-wrap:wrap; align-items:center; gap:40px; }
+.about-img { width:250px; height:250px; object-fit:cover; border-radius:20px; flex-shrink:0; transition: transform 0.3s; }
+.about-img:hover { transform: scale(1.05); }
+.about-text { flex:1; }
+.about-text h2 { color:#0b2a4a; text-align:left; font-size:2rem; margin-bottom:15px; }
+.about-text p { margin-top:10px; }
 
-/* Buttons */
-.btn-linkedin { background: #0077b5; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; margin-top: 20px; }
-.btn-hire { background: #1a73e8; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
-.btn-whatsapp { background: #25D366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+/* --- PROFESSIONAL ADVANTAGE --- */
+#value { background:#1a73e8; border-radius:20px; padding:60px 40px; text-align:center; }
+.prop-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin-top:30px; text-align:left; }
+.check { display:flex; gap:15px; background: rgba(255,255,255,0.1); padding:15px; border-radius:15px; transition: transform 0.3s; }
+.check:hover { transform: translateY(-5px); }
+.check i { font-size:1.4rem; color:#25D366; }
 
-/* Section Styling */
-section { padding: 70px 20px; max-width: 1200px; margin: auto; }
-h2 { text-align: center; margin-bottom: 40px; font-family: 'Roboto Slab', serif; font-size: 2.2rem; color: #7cb9ff; }
+/* --- CORE EXPERTISE CARDS --- */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.card { background:rgba(255,255,255,0.05); padding:25px; border-radius:15px; border:1px solid rgba(255,255,255,0.1); transition: transform 0.3s, background 0.3s; cursor:pointer; }
+.card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+.card i { font-size:2rem; color:#1a73e8; margin-bottom:12px; display:block; }
 
-/* Professional Summary */
-#about { background: #ffffff; color: #0b2a4a; border-radius: 20px; padding: 50px; }
-.about-container { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-.about-img { width: 220px; height: 220px; border-radius: 20px; object-fit: cover; border: 5px solid #f4f7fa; }
+/* --- WORKFLOW --- */
+.flow { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.flow-card { background:rgba(26,115,232,.1); padding:30px; border-radius:15px; border-top:4px solid #1a73e8; position:relative; transition: transform 0.3s; cursor:pointer; }
+.flow-card:hover { transform: translateY(-5px); }
+.step { position:absolute; top:-15px; left:20px; background:#1a73e8; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:white; }
 
-/* Availability Badge */
-.badge { background: #e8f0fe; color: #1a73e8; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+/* --- TOOLS --- */
+.tools { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:15px; }
+.tool { background:white; color:#0b2a4a; text-align:center; padding:20px; border-radius:12px; transition: transform 0.3s; cursor:pointer; }
+.tool:hover { transform: translateY(-5px); }
+.tool img { height:40px; margin-bottom:8px; }
 
-/* Workflow Cards */
-.workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center; }
-.step-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-bottom: 4px solid #1a73e8; }
-.step-number { background: #1a73e8; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
+/* --- CERTIFICATIONS --- */
+.certs { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:15px; }
+.cert { background:white; color:#0b2a4a; padding:10px; border-radius:12px; text-align:center; transition: transform 0.3s; cursor:pointer; }
+.cert:hover { transform: translateY(-5px); }
+.cert img { width:100%; height:90px; object-fit:contain; margin-bottom:8px; }
 
-/* Services Offered */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.service-card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
-.service-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; height: 150px; object-fit: cover; }
+/* --- FAQ --- */
+.faq { max-width:800px; margin:auto; }
+.faq-item { background:white; color:#0b2a4a; margin-bottom:15px; border-radius:10px; overflow:hidden; cursor:pointer; }
+.faq-question { padding:20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
+.faq-answer { max-height:0; overflow:hidden; padding:0 20px; transition: max-height 0.3s ease, padding 0.3s ease; }
+.faq-item.active .faq-answer { max-height:1000px; padding:20px; }
+.faq-question i { transition: transform 0.3s; }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
 
-/* Sample Table */
-.sample-box { background: white; padding: 25px; border-radius: 15px; color: #333; overflow-x: auto; }
-.sample-table { width: 100%; border-collapse: collapse; min-width: 500px; }
-.sample-table th { background: #0b2a4a; color: white; padding: 12px; text-align: left; }
-.sample-table td { padding: 10px; border-bottom: 1px solid #eee; }
+/* --- CALL TO ACTION --- */
+.cta { background:#1a73e8; padding:60px; border-radius:20px; text-align:center; }
+.btn { background:white; color:#1a73e8; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block; margin-top:20px; transition: transform 0.3s; }
+.btn:hover { transform: scale(1.05); }
 
-/* Skills List */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-.skill-item { background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; text-align: center; font-size: 0.9rem; }
+/* --- FLOATING WHATSAPP --- */
+.whatsapp-float { position:fixed; bottom:25px; right:25px; background:#25D366; color:white; font-size:26px; padding:15px 18px; border-radius:50%; box-shadow:0 6px 15px rgba(0,0,0,0.3); z-index:999; transition: transform 0.3s; }
+.whatsapp-float:hover { transform: scale(1.1); }
 
-/* Tools Grid */
-.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; text-align: center; }
-.tool-card { background: white; padding: 15px; border-radius: 12px; color: #333; }
-.tool-card img { height: 40px; object-fit: contain; margin-bottom: 5px; }
-
-/* Certifications */
-.certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.cert-card { background: white; padding: 15px; text-align: center; border-radius: 12px; }
-.cert-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; margin-bottom: 10px; }
-.cert-card p { font-size: 0.75rem; font-weight: 700; color: #0b2a4a; line-height: 1.3; }
-
-/* FAQ */
-.faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.faq-card { background: #ffffff; color: #0b2a4a; padding: 25px; border-radius: 15px; }
-
-#backToTop { position: fixed; bottom: 20px; right: 20px; background: #1a73e8; color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; text-decoration: none; z-index: 1001; }
-
-@media(max-width: 900px) { .certs-grid { grid-template-columns: repeat(2, 1fr); } .services-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
+
 <body>
 
-<a href="#" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-
-<header>
-    <h1>Michelle Gonzales</h1>
-    <p>Administrative • Payroll • Bookkeeping • Global Operations Expert</p>
-    <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="btn-linkedin">
-        <i class="fab fa-linkedin"></i> LinkedIn Profile
-    </a>
-</header>
-
+<!-- NAV -->
 <nav>
-    <a href="#about">Summary</a>
-    <a href="#workflow">Workflow</a>
-    <a href="#services">Services</a>
-    <a href="#samples">Samples</a>
-    <a href="#skills">Skills</a>
-    <a href="#tools">Tools</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#faq">FAQ</a>
+  <a href="#about">Profile</a>
+  <a href="#value">Advantage</a>
+  <a href="#services">Expertise</a>
+  <a href="#workflow">Workflow</a>
+  <a href="#tools">Tools</a>
+  <a href="#certs">Certifications</a>
+  <a href="#faq">FAQ</a>
+  <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank">LinkedIn</a>
 </nav>
 
-<section id="about" class="reveal">
-    <div class="about-container">
-        <div class="about-text">
-            <div class="badge"><i class="fas fa-globe"></i> Available in All Timezones</div>
-            <h2 style="text-align: left; color: #0b2a4a; margin-top: 5px;">Professional Summary</h2>
-            <p>Reliable operations specialist with <b>7+ years of corporate experience</b>. I specialize in managing <b>Payroll processing</b>, administrative workflows, and accounts receivable. I am fully equipped to support global clients and am <b>available to work across all timezones</b>, providing seamless back-office support regardless of your location.</p>
-        </div>
-        <img src="gonzales/Gonzales_Michelle.jpg" alt="Michelle Gonzales" class="about-img">
-    </div>
+<!-- HERO -->
+<header>
+  <h1>Michelle Gonzales</h1>
+  <p>Administrative • Accounts Receivable • Bookkeeping • Payroll Support</p>
+  <div class="hero-buttons">
+    <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://wa.me/639654033089" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://cal.com/michgonzalesva" target="_blank" class="book-btn"><i class="fas fa-calendar"></i> Book Discovery Call</a>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <img src="gonzales/Gonzales_Michelle.jpg" class="about-img">
+  <div class="about-text">
+    <h2>Operational Partner</h2>
+    <p>I provide administrative and financial documentation support for businesses that need reliable back-office organization. My focus is building structured workflows that keep records organized and easy to manage.</p>
+    <p>I am currently expanding my bookkeeping skills and continuing to develop my QuickBooks knowledge while supporting clients with documentation, financial tracking, and administrative coordination.</p>
+  </div>
 </section>
 
-
-<section id="workflow" class="reveal">
-    <h2>Workflow</h2>
-    <div class="workflow-grid">
-        <div class="step-card">
-            <div class="step-number">1</div>
-            <h4>Sync</h4>
-            <p>Aligning with your specific timezone and communication preferences.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-number">2</div>
-            <h4>Execution</h4>
-            <p>Managing daily payroll and admin tasks with corporate-grade precision.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-number">3</div>
-            <h4>Review</h4>
-            <p>End-of-day reporting to ensure your business operations never stall.</p>
-        </div>
-    </div>
+<!-- PROFESSIONAL ADVANTAGE -->
+<section id="value">
+  <h2>Professional Advantage</h2>
+  <div class="prop-grid">
+    <div class="check"><i class="fas fa-check-circle"></i><div><h3>Corporate Discipline</h3><p>Structured documentation and organized records.</p></div></div>
+    <div class="check"><i class="fas fa-check-circle"></i><div><h3>Process Organization</h3><p>Reliable workflows for business operations.</p></div></div>
+    <div class="check"><i class="fas fa-check-circle"></i><div><h3>Reliable Communication</h3><p>Professional support across teams.</p></div></div>
+  </div>
 </section>
 
-<section id="services" class="reveal">
-    <h2>Services Offered</h2>
-    <div class="services-grid">
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=400" alt="Payroll">
-            <h3>Payroll Management</h3>
-            <p>Accurate salary processing, time-tracking, and maintenance of confidential payroll records.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=400" alt="AR">
-            <h3>Accounts Receivable</h3>
-            <p>Full-cycle invoicing, payment tracking, and professional billing coordination.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400" alt="Bookkeeping">
-            <h3>Bookkeeping</h3>
-            <p>Precise transaction entries and systematic financial record organization.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400" alt="Admin Support">
-            <h3>Admin Support</h3>
-            <p>Streamlined email management, scheduling, and general office operations.</p>
-        </div>
-    </div>
+<!-- CORE EXPERTISE -->
+<section id="services">
+  <h2>Core Expertise</h2>
+  <div class="grid">
+    <div class="card"><i class="fas fa-user-tie"></i><h3>Executive Administration</h3><p>Email organization, scheduling, document management.</p></div>
+    <div class="card"><i class="fas fa-book"></i><h3>Bookkeeping Support</h3><p>Transaction documentation and financial record organization.</p></div>
+    <div class="card"><i class="fas fa-file-invoice-dollar"></i><h3>Accounts Receivable</h3><p>Invoice tracking and payment monitoring.</p></div>
+    <div class="card"><i class="fas fa-calculator"></i><h3>Payroll Documentation</h3><p>Organizing payroll records and salary tracking.</p></div>
+  </div>
 </section>
 
-<section id="samples" class="reveal">
-    <h2>Work Samples</h2>
-    <div class="sample-box">
-        <table class="sample-table">
-            <thead><tr><th>Task Area</th><th>Description</th><th>Outcome</th></tr></thead>
-            <tbody>
-                <tr><td>Payroll Processing</td><td>Managed monthly payroll for global teams</td><td>100% Accuracy</td></tr>
-                <tr><td>AR Management</td><td>Invoicing & tracking for construction entities</td><td>Consistent Cash Flow</td></tr>
-                <tr><td>Administrative</td><td>Multi-timezone scheduling & coordination</td><td>Zero Communication Gaps</td></tr>
-            </tbody>
-        </table>
-    </div>
+<!-- WORKFLOW -->
+<section id="workflow">
+  <h2>Client Onboarding Workflow</h2>
+  <div class="flow">
+    <div class="flow-card"><div class="step">1</div><h3>Discovery Call</h3><p>Discuss business workflow and needs.</p></div>
+    <div class="flow-card"><div class="step">2</div><h3>System Setup</h3><p>Secure access and operational alignment.</p></div>
+    <div class="flow-card"><div class="step">3</div><h3>Trial Week</h3><p>1-week paid trial collaboration.</p></div>
+    <div class="flow-card"><div class="step">4</div><h3>Full Support</h3><p>Long-term administrative support.</p></div>
+  </div>
 </section>
 
-<section id="skills" class="reveal">
-    <h2>Skills & Expertise</h2>
-    <div class="skills-grid">
-        <div class="skill-item">Payroll Processing</div>
-        <div class="skill-item">Invoicing & Billing</div>
-        <div class="skill-item">Bookkeeping</div>
-        <div class="skill-item">Bank Reconciliation</div>
-        <div class="skill-item">MS Excel (Advanced)</div>
-        <div class="skill-item">Google Workspace</div>
-        <div class="skill-item">AI Productivity Tools</div>
-    </div>
+<!-- TOOLS -->
+<section id="tools">
+  <h2>Tech Stack</h2>
+  <div class="tools">
+    <div class="tool"><img src="logos/Quickbooks.jpg"><p>QuickBooks (Learning)</p></div>
+    <div class="tool"><img src="logos/Microsoft_Excel.jpg"><p>Excel</p></div>
+    <div class="tool"><img src="logos/Google_Workspace.jpg"><p>Google Workspace</p></div>
+    <div class="tool"><img src="logos/ChatGPT.jpg"><p>ChatGPT</p></div>
+    <div class="tool"><img src="logos/Canva.jpg"><p>Canva</p></div>
+    <div class="tool"><img src="logos/Microsoft_365.jpg"><p>Microsoft 365</p></div>
+  </div>
 </section>
 
-<section id="tools" class="reveal">
-    <h2>Tools</h2>
-    <div class="tools-grid">
-        <div class="tool-card"><img src="logos/Quickbooks.jpg" alt="QB"><p>QuickBooks</p></div>
-        <div class="tool-card"><img src="logos/Microsoft_Excel.jpg" alt="Excel"><p>Excel</p></div>
-        <div class="tool-card"><img src="logos/Google_Workspace.jpg" alt="Google"><p>Workspace</p></div>
-        <div class="tool-card"><img src="logos/ChatGPT.jpg" alt="AI"><p>ChatGPT</p></div>
-        <div class="tool-card"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
-        <div class="tool-card"><img src="logos/Microsoft_365.jpg" alt="M365"><p>M365</p></div>
-    </div>
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <h2>Professional Certifications</h2>
+  <div class="certs">
+    <div class="cert"><img src="certificates/Canva_Visual_Suite.png"><p>Canva Visual Suite</p></div>
+    <div class="cert"><img src="certificates/Introduction_to_Bookkeeping.png"><p>Bookkeeping</p></div>
+    <div class="cert"><img src="certificates/Journalizing_Transactions.png"><p>Journalizing</p></div>
+    <div class="cert"><img src="certificates/Google_Workspace_Features_and_Applications.png"><p>Google Workspace</p></div>
+    <div class="cert"><img src="certificates/Accounts_Receivable_Management.png"><p>AR Management</p></div>
+    <div class="cert"><img src="certificates/Accounting_Basics.png"><p>Accounting Basics</p></div>
+    <div class="cert"><img src="certificates/Gmail_Calendar_for_Business_Masterclass.png"><p>Executive Admin</p></div>
+    <div class="cert"><img src="certificates/Diploma_in_Financial_Accounting.png"><p>Financial Accounting</p></div>
+  </div>
 </section>
 
-<section id="certifications" class="reveal">
-    <h2>Certifications</h2>
-    <div class="certs-grid">
-        <div class="cert-card"><img src="certificates/Canva_Visual_Suite.png" alt="C1"><p>Canva Visual Suite</p></div>
-        <div class="cert-card"><img src="certificates/Introduction_to_Bookkeeping.png" alt="C2"><p>Introduction to Bookkeeping</p></div>
-        <div class="cert-card"><img src="certificates/Journalizing_Transactions.png" alt="C3"><p>Journalizing Transactions</p></div>
-        <div class="cert-card"><img src="certificates/Google_Workspace_Features_and_Applications.png" alt="C4"><p>Google Workspace Features and Applications</p></div>
-        <div class="cert-card"><img src="certificates/Accounts_Receivable_Management.png" alt="C5"><p>Accounts Receivable Management</p></div>
-        <div class="cert-card"><img src="certificates/Accounting_Basics.png" alt="C6"><p>Accounting Basics</p></div>
-        <div class="cert-card"><img src="certificates/Gmail_Calendar_for_Business_Masterclass.png" alt="C7"><p>Gmail & Calendar for Business Masterclass</p></div>
-        <div class="cert-card"><img src="certificates/Diploma_in_Financial_Accounting.png" alt="C8"><p>Diploma in Financial Accounting</p></div>
+<!-- FAQ -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-question"><span>Do you offer trial work?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Yes. I offer a 1-week paid trial to ensure workflow compatibility.</div>
     </div>
+    <div class="faq-item">
+      <div class="faq-question"><span>Which timezones do you support?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">I work with businesses across US, UK, and Australian timezones.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><span>How do clients schedule appointments?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Clients can book directly via <a href="https://cal.com/michgonzalesva" target="_blank">Cal.com</a>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><span>What is your payment method?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Payments can be made via bank transfer or PayPal depending on agreement.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><span>What software do you use?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">I use QuickBooks, Excel, Google Workspace, ChatGPT, Canva, and Microsoft 365.</div>
+    </div>
+  </div>
 </section>
 
-<section id="faq" class="reveal">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-grid">
-        <div class="faq-card">
-            <h4>"What timezones are you available to work?"</h4>
-            <p>I am available to work in <b>all timezones</b>, including EST, PST, GMT, and AEST. I ensure that my working hours overlap with your business needs for real-time communication.</p>
-        </div>
-        <div class="faq-card">
-            <h4>"How do you ensure task accuracy across borders?"</h4>
-            <p>With 7+ years of corporate experience, I maintain high standards of precision regardless of location. I use standardized reporting tools so you are always updated on my progress.</p>
-        </div>
-    </div>
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to streamline your business operations?</h2>
+  <a href="https://cal.com/michgonzalesva" target="_blank" class="btn">Book a Discovery Call</a>
 </section>
 
-<section id="contact" class="reveal">
-    <div style="background: #1a73e8; padding: 60px; border-radius: 20px; text-align: center;">
-        <h2 style="color: white; margin-bottom: 20px;">Available Anywhere You Are</h2>
-        <p style="margin-bottom: 30px;">Email: <b>michgonzales.career@gmail.com</b><br>
-        Phone / WhatsApp: <b>+63 965 403 3089</b></p>
-        
-        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-            <a href="mailto:michgonzales.career@gmail.com" class="btn-hire" style="background: white; color: #1a73e8;">
-                <i class="fas fa-envelope"></i> Send an Email
-            </a>
-            <a href="https://wa.me/639654033089" target="_blank" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Message on WhatsApp
-            </a>
-        </div>
-    </div>
-</section>
-
-<footer style="text-align: center; padding: 40px; opacity: 0.6;"><p>© 2026 Michelle Gonzales | Professional Portfolio</p></footer>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/639654033089" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
-  }
-}
-window.addEventListener("scroll", function() {
-  reveal();
-  var btt = document.getElementById("backToTop");
-  if (window.pageYOffset > 300) { btt.style.display = "flex"; } else { btt.style.display = "none"; }
+// FAQ toggle
+document.querySelectorAll(".faq-item").forEach(item=>{
+  item.addEventListener("click",()=>{ item.classList.toggle("active"); });
 });
-reveal();
+
+// Scroll fade-in effect
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add("visible"); } });
+}, { threshold: 0.15 });
+sections.forEach(section=>observer.observe(section));
 </script>
+
 </body>
 </html>
