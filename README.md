@@ -333,6 +333,34 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
     </div>
 </section>
 
+<section id="workflow">
+    <div class="container">
+        <h2>How We Work Together</h2>
+        <div class="flow">
+            <div class="flow-card">
+                <div class="step">1</div>
+                <h3>Discovery</h3>
+                <p>We discuss your specific business needs and identify the administrative gaps that need filling.</p>
+            </div>
+            <div class="flow-card">
+                <div class="step">2</div>
+                <h3>Strategic Setup</h3>
+                <p>Establishing secure access to your tools and creating a tailored communication plan.</p>
+            </div>
+            <div class="flow-card">
+                <div class="step">3</div>
+                <h3>Active Support</h3>
+                <p>Meticulous handling of your day-to-day operations with consistent accuracy and updates.</p>
+            </div>
+            <div class="flow-card">
+                <div class="step">4</div>
+                <h3>Optimization</h3>
+                <p>Monthly reviews to streamline processes and improve your bottom-line efficiency.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="tools">
     <div class="container">
         <h2>Tech Stack</h2>
