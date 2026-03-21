@@ -86,6 +86,8 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 
 /* --- PORTFOLIO --- */
 .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
+
+/* Existing Portfolio Item Styles */
 .portfolio-item { background:white; border-radius:15px; overflow:hidden; color:#0b2a4a; box-shadow:0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
 .portfolio-item:hover { transform: scale(1.02); }
 .portfolio-img-container { width:100%; height:220px; background:#f0f0f0; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; border-bottom:1px solid #ddd; }
@@ -217,11 +219,13 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
     </div>
 </section>
 
+<!-- --- PORTFOLIO WITH 5 ITEMS --- -->
 <section id="portfolio">
     <div class="container">
         <h2>Sample Works & Reports</h2>
         <div class="portfolio-grid">
 
+            <!-- Profit & Loss -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
                     <img src="qbo/profitandloss.jpg" alt="Profit & Loss Statement">
@@ -229,163 +233,4 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Profit & Loss Statement</h3>
-                    <p>A comprehensive overview of monthly revenue and expenditures, providing clear insights into operational profitability.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <div class="portfolio-img-container">
-                    <img src="qbo/balancesheet.jpg" alt="Balance Sheet">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Balance Sheet</h3>
-                    <p>Detailed snapshot of company assets, liabilities, and equity, ensuring an accurate view of the business's financial position.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <div class="portfolio-img-container">
-                    <img src="qbo/cashflow.jpg" alt="Cash Flow Statement">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Statement of Cash Flows</h3>
-                    <p>Analysis of cash movement through operating, investing, and financing activities to monitor liquidity and business health.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <div class="portfolio-img-container">
-                    <img src="qbo/transaction_report.jpg" alt="QBO Transaction Report">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>General Ledger & Transactions</h3>
-                    <p>Meticulous categorization of daily business transactions and ledger maintenance for audit-ready financial records.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="tools">
-    <div class="container">
-        <h2>Tech Stack</h2>
-        <div class="tools">
-            <div class="tool"><img src="logos/Quickbooks.jpg" alt="QuickBooks"><p>QuickBooks (Learning)</p></div>
-            <div class="tool"><img src="logos/Microsoft_Excel.jpg" alt="Excel"><p>Excel</p></div>
-            <div class="tool"><img src="logos/Google_Workspace.jpg" alt="Google Workspace"><p>Google Workspace</p></div>
-            <div class="tool"><img src="logos/ChatGPT.jpg" alt="ChatGPT"><p>ChatGPT</p></div>
-            <div class="tool"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
-            <div class="tool"><img src="logos/Microsoft_365.jpg" alt="Microsoft 365"><p>Microsoft 365</p></div>
-        </div>
-    </div>
-</section>
-
-<section id="certifications">
-    <div class="container">
-        <div id="cert-inner">
-            <h2>Professional Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <img src="certificates/Diploma_in_Financial_Accounting.png" alt="Diploma in Financial Accounting">
-                    <h3>Diploma in Financial Accounting</h3>
-                    <p>Alison</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Accounting_Basics.png" alt="Accounting Basics">
-                    <h3>Accounting Basics</h3>
-                    <p>Alison</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Introduction_to_Bookkeeping.png" alt="Introduction to Bookkeeping">
-                    <h3>Introduction to Bookkeeping</h3>
-                    <p>TESDA Online Program</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Journalizing_Transactions.png" alt="Journalizing Transactions">
-                    <h3>Journalizing Transactions</h3>
-                    <p>TESDA Online Program</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Accounts_Receivable_Management.png" alt="Accounts Receivable Management">
-                    <h3>Accounts Receivable Management</h3>
-                    <p>Alison</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Google_Workspace_Features_and_Applications.png" alt="Google Workspace">
-                    <h3>Google Workspace: Features & Apps</h3>
-                    <p>Alison</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Gmail_Calendar_for_Business_Masterclass.png" alt="Gmail Calendar Masterclass">
-                    <h3>Gmail & Calendar for Business</h3>
-                    <p>Alison</p>
-                </div>
-                <div class="cert-card">
-                    <img src="certificates/Canva_Visual_Suite.png" alt="Canva Visual Suite">
-                    <h3>Meet Canva's Visual Suite</h3>
-                    <p>Canva Design School</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="faq">
-    <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item"><div class="faq-question"><span>Do you offer trial work?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes. I offer a 1-week paid trial to ensure workflow compatibility.</div></div>
-            <div class="faq-item">
-                <div class="faq-question"><span>How do you handle QuickBooks if you are currently learning it?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">While I am perfecting the software interface, I have a strong foundation in <strong>Accounting Fundamentals</strong>. I understand debits, credits, and the accounting cycle. The "learning" is simply mastering the QuickBooks system shortcuts—the math and accuracy behind your reports remain my top priority.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question"><span>What is the financial advantage of hiring you now?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">Hiring me at this stage allows you to get high-level administrative support at a <strong>growth-friendly rate</strong>. You receive an operational partner who already understands financial logic, saving you the high cost of a senior firm while getting the same level of care.</div>
-            </div>
-            <div class="faq-item"><div class="faq-question"><span>Which timezones do you support?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">I work with businesses across US, UK, and Australian timezones.</div></div>
-            <div class="faq-item"><div class="faq-question"><span>Payment methods?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Payments can be made via bank transfer or PayPal depending on agreement.</div></div>
-        </div>
-    </div>
-</section>
-
-<div class="cta-wrapper" id="contact">
-    <div class="cta-box">
-        <h2>Let's Organize Your Growth</h2>
-        <p>Delegate your administrative burden and focus on scaling your business. Ready to see how we can work together?</p>
-        <a href="https://cal.com/michgonzalesva" target="_blank" class="btn-cta">
-            <i class="fas fa-calendar-check"></i> Book Your Discovery Call
-        </a>
-        <div class="cta-contact-grid">
-            <a href="mailto:michgonzales.career@gmail.com" class="cta-contact-item">
-                <i class="fas fa-envelope"></i> michgonzales.career@gmail.com
-            </a>
-            <a href="https://wa.me/639654033089" target="_blank" class="cta-contact-item">
-                <i class="fab fa-whatsapp"></i> +63 965 403 3089
-            </a>
-            <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="cta-contact-item">
-                <i class="fab fa-linkedin"></i> LinkedIn Profile
-            </a>
-        </div>
-    </div>
-</div>
-
-<a href="https://wa.me/639654033089" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-const sections = document.querySelectorAll("section, .cta-wrapper");
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add("visible"); } });
-},{ threshold: 0.1 });
-sections.forEach(section=>observer.observe(section));
-
-document.querySelectorAll(".faq-item").forEach(item=>{
-  item.addEventListener("click", ()=>{ item.classList.toggle("active"); });
-});
-</script>
-</body>
-</html>
+                    <p>Mock monthly Profit & Loss report showing income, expenses, and net profit for a sample business.</
