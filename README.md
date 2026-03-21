@@ -230,17 +230,23 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Profit & Loss Statement</h3>
                     <p>Generated monthly financial reports to track net income and operating expenses accurately.</p>
+                    <a href="qbo/profitandloss.pdf" target="_blank" class="portfolio-tag" style="background:#1a73e8; color:white; text-decoration:none; margin-top:10px; display:inline-block;">
+                        <i class="fas fa-file-pdf"></i> View Full PDF
+                    </a>
                 </div>
             </div>
 
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
-                    <img src="qbo/balancesheet.jpg" alt="Expense Recording">
+                    <img src="qbo/balancesheet.jpg" alt="Balance Sheet">
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Expense Categorization</h3>
+                    <h3>Balance Sheet</h3>
                     <p>Organization of daily transactions into proper chart of accounts for tax readiness.</p>
+                    <a href="qbo/P&L.pdf" target="_blank" class="portfolio-tag" style="background:#1a73e8; color:white; text-decoration:none; margin-top:10px; display:inline-block;">
+                        <i class="fas fa-file-pdf"></i> View Full PDF
+                    </a>
                 </div>
             </div>
 
@@ -252,34 +258,12 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Cash Flow Management</h3>
                     <p>Monitoring cash inflows and outflows to ensure business liquidity and operational health.</p>
+                    <a href="qbo/cashflow.pdf" target="_blank" class="portfolio-tag" style="background:#1a73e8; color:white; text-decoration:none; margin-top:10px; display:inline-block;">
+                        <i class="fas fa-file-pdf"></i> View Full PDF
+                    </a>
                 </div>
             </div>
 
-            <div class="portfolio-item">
-                <div class="portfolio-img-container">
-                    <img src="qbo/ar_aging.jpg" alt="A/R Aging">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Financial Tracking</span>
-                    <h3>A/R Aging Reports</h3>
-                    <p>Monitoring outstanding invoices to ensure healthy cash flow and timely payments.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="tools">
-    <div class="container">
-        <h2>Tech Stack</h2>
-        <div class="tools">
-            <div class="tool"><img src="logos/Quickbooks.jpg" alt="QuickBooks"><p>QuickBooks (Learning)</p></div>
-            <div class="tool"><img src="logos/Microsoft_Excel.jpg" alt="Excel"><p>Excel</p></div>
-            <div class="tool"><img src="logos/Google_Workspace.jpg" alt="Google Workspace"><p>Google Workspace</p></div>
-            <div class="tool"><img src="logos/ChatGPT.jpg" alt="ChatGPT"><p>ChatGPT</p></div>
-            <div class="tool"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
-            <div class="tool"><img src="logos/Microsoft_365.jpg" alt="Microsoft 365"><p>Microsoft 365</p></div>
         </div>
     </div>
 </section>
