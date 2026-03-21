@@ -221,42 +221,40 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
     <div class="container">
         <h2>Sample Works & Reports</h2>
         <div class="portfolio-grid">
+
             <div class="portfolio-item">
-                <div class="portfolio-img-container"><img src="portfolio/pl_statement.jpg" alt="P&L Statement"></div>
+                <div class="portfolio-img-container">
+                    <img src="portfolio/pl_report.jpg" alt="Profit & Loss Statement">
+                </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Profit & Loss Statement</h3>
-                    <p>Generated monthly financial reports to track net income and operating expenses accurately.</p>
+                    <p>Mock monthly Profit & Loss report showing income, expenses, and net profit for a sample business.</p>
                 </div>
             </div>
+
             <div class="portfolio-item">
-                <div class="portfolio-img-container"><img src="portfolio/expenses.jpg" alt="Expense Recording"></div>
+                <div class="portfolio-img-container">
+                    <img src="portfolio/balance_sheet.jpg" alt="Balance Sheet">
+                </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Expense Categorization</h3>
-                    <p>Organization of daily transactions into proper chart of accounts for tax readiness.</p>
+                    <h3>Balance Sheet</h3>
+                    <p>Demonstrates assets, liabilities, and equity to show overall financial position for a sample company.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img-container"><img src="portfolio/ar_aging.jpg" alt="A/R Aging"></div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Financial Tracking</span>
-                    <h3>A/R Aging Reports</h3>
-                    <p>Monitoring outstanding invoices to ensure healthy cash flow and timely payments.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section id="workflow">
-    <div class="container">
-        <h2>Client Onboarding Workflow</h2>
-        <div class="flow">
-            <div class="flow-card"><div class="step">1</div><h3>Discovery Call</h3><p>Discuss business workflow and needs.</p></div>
-            <div class="flow-card"><div class="step">2</div><h3>System Setup</h3><p>Secure access and operational alignment.</p></div>
-            <div class="flow-card"><div class="step">3</div><h3>Trial Week</h3><p>1-week paid trial collaboration.</p></div>
-            <div class="flow-card"><div class="step">4</div><h3>Full Support</h3><p>Long-term administrative support.</p></div>
+            <div class="portfolio-item">
+                <div class="portfolio-img-container">
+                    <img src="portfolio/cashflow_report.jpg" alt="Cash Flow Statement">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">QuickBooks Online</span>
+                    <h3>Cash Flow Statement</h3>
+                    <p>Shows cash inflows and outflows, illustrating healthy cash management and operational insights.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
