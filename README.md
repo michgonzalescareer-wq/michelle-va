@@ -28,6 +28,7 @@ section {
     opacity:0; 
     transform: translateY(40px); 
     transition: all 0.6s ease; 
+    scroll-margin-top: 70px; 
 }
 
 section.visible { opacity:1; transform: translateY(0); }
@@ -67,7 +68,6 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 .about-img:hover { transform: scale(1.05); }
 .about-text { flex:1; }
 .about-text h2 { color:#0b2a4a; text-align:left; font-size:2rem; margin-bottom:15px; }
-.about-text p { margin-top:10px; }
 
 /* --- PROFESSIONAL ADVANTAGE --- */
 #value-inner { background:#15417c; border-radius:20px; padding:60px 40px; text-align:center; width: 100%; }
@@ -86,21 +86,27 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 
 /* --- PORTFOLIO --- */
 .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
-
-/* Existing Portfolio Item Styles */
-.portfolio-item { background:white; border-radius:15px; overflow:hidden; color:#0b2a4a; box-shadow:0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
-.portfolio-item:hover { transform: scale(1.02); }
-.portfolio-img-container { width:100%; height:220px; background:#f0f0f0; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; border-bottom:1px solid #ddd; }
-.portfolio-img-container img { width:100%; height:100%; object-fit:cover; }
+.portfolio-item { background:white; border-radius:15px; overflow:hidden; color:#0b2a4a; box-shadow:0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s; position: relative; cursor: zoom-in; }
+.portfolio-item:hover { transform: translateY(-8px); }
+.portfolio-img-container { width:100%; height:220px; background:#f0f0f0; position:relative; overflow:hidden; border-bottom:1px solid #ddd; }
+.portfolio-img-container img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+.portfolio-overlay {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: rgba(26, 115, 232, 0.85);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s ease;
+}
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+.view-btn { color: white; border: 2px solid white; padding: 8px 18px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; }
 .portfolio-info { padding:20px; }
 .portfolio-info h3 { font-size:1.2rem; margin-bottom:8px; color:#1a73e8; }
 .portfolio-tag { display:inline-block; background:#e1efff; color:#1a73e8; font-size:0.75rem; padding:3px 10px; border-radius:20px; font-weight:600; margin-bottom:10px; }
 
 /* --- WORKFLOW --- */
 .flow { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.flow-card { background:rgba(26,115,232,.1); padding:30px; border-radius:15px; border-top:4px solid #1a73e8; position:relative; transition: transform 0.3s; cursor:pointer; }
-.flow-card:hover { transform: translateY(-5px); }
-.step { position:absolute; top:-15px; left:20px; background:#1a73e8; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:white; }
+.flow-card { background:rgba(26,115,232,.1); padding:40px 30px 30px; border-radius:15px; border-top:4px solid #1a73e8; position:relative; transition: transform 0.3s; cursor:default; }
+.flow-card:hover { transform: translateY(-5px); background:rgba(26,115,232,.15); }
+.step { position:absolute; top:-15px; left:20px; background:#1a73e8; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:white; box-shadow: 0 4px 10px rgba(26,115,232,0.3); }
 
 /* --- TOOLS --- */
 .tools { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:15px; }
@@ -111,7 +117,7 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 /* --- CERTIFICATIONS --- */
 #cert-inner { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 60px 40px; width: 100%; }
 .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.cert-card { background: white; color: #0b2a4a; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+.cert-card { background: white; color: #0b2a4a; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between; cursor: zoom-in; }
 .cert-card:hover { transform: translateY(-5px); }
 .cert-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; border-radius: 8px; border: 1px solid #eee; }
 .cert-card h3 { font-size: 0.85rem; color: #1a73e8; line-height: 1.2; font-weight: 600; }
@@ -126,6 +132,12 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 .faq-question i { transition: transform 0.3s; }
 .faq-item.active .faq-question i { transform: rotate(180deg); }
 
+/* --- LIGHTBOX MODAL --- */
+.modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 42, 74, 0.98); backdrop-filter: blur(5px); cursor: zoom-out; align-items: center; justify-content: center; }
+.modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; border-radius: 10px; animation: zoom 0.3s; }
+#caption { text-align: center; color: #7cb9ff; padding: 20px; font-weight: 600; }
+@keyframes zoom { from {transform: scale(0.8); opacity:0} to {transform: scale(1); opacity:1} }
+
 /* --- CTA & CONTACT --- */
 .cta-wrapper { width: 100%; padding: 80px 20px; }
 .cta-box { background: linear-gradient(135deg, #1a73e8 0%, #0b2a4a 100%); padding: 100px 40px; border-radius: 30px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); max-width: 1200px; margin: 0 auto; }
@@ -135,21 +147,18 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 .btn-cta:hover { transform: scale(1.1) translateY(-3px); background: #20ba5a; }
 .cta-contact-grid { display: flex; justify-content: center; gap: 50px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); flex-wrap: wrap; }
 .cta-contact-item { color: white; text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 10px 15px; }
-.cta-contact-item:hover { opacity: 0.8; transform: translateY(-2px); }
 .cta-contact-item i { color: #7cb9ff; font-size: 1.2rem; }
 
 /* --- FLOATING WHATSAPP --- */
 .whatsapp-float { position: fixed; bottom:25px; right:25px; background:#25D366; color:white; font-size:26px; padding:15px 18px; border-radius:50%; box-shadow:0 6px 15px rgba(0,0,0,0.3); z-index:999; display:flex; align-items:center; justify-content:center; text-decoration:none; transition: transform 0.3s; }
-.whatsapp-float:hover { transform: scale(1.1); }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .cert-grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 1024px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
     .about-box { padding: 30px; flex-direction: column; text-align: center; }
     .about-text h2 { text-align: center; }
     header h1 { font-size: 2.5rem; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
     .cta-contact-grid { flex-direction: column; gap: 20px; }
@@ -219,18 +228,211 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
     </div>
 </section>
 
-<!-- --- PORTFOLIO WITH 5 ITEMS --- -->
-<section id="portfolio">
+<section id="portfolio" class="portfolio-section">
     <div class="container">
-        <h2>Sample Works & Reports</h2>
+        <h2 class="section-title">Professional Work Samples</h2>
+        <p class="section-subtitle">A showcase of specialized financial reporting, operational bookkeeping, and executive administrative support.</p>
+
         <div class="portfolio-grid">
 
-            <!-- Profit & Loss -->
-            <div class="portfolio-item">
+            <div class="portfolio-item zoomable">
                 <div class="portfolio-img-container">
-                    <img src="qbo/profitandloss.jpg" alt="Profit & Loss Statement">
+                    <img src="qbo/strategic-calendar-mgmt.png" alt="Strategic Calendar Management">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Operations</span>
+                    <h3>Strategic Calendar Strategy</h3>
+                    <p>Advanced time-blocking featuring buffer zones, energy-mapped deep work, and multi-timezone coordination.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/profitandloss.jpg" alt="Profit and Loss Statement">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Profit & Loss Statement</h3>
-                    <p>Mock monthly Profit & Loss report showing income, expenses, and net profit for a sample business.</
+                    <h3>Profit & Loss Analysis</h3>
+                    <p>Comprehensive financial health reporting with year-over-year comparisons and revenue trend analysis.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/balancesheet.jpg" alt="Balance Sheet">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">QuickBooks Online</span>
+                    <h3>Statement of Financial Position</h3>
+                    <p>Accurate reporting of assets, liabilities, and equity to ensure transparency for business stakeholders.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/expense_tracking.png" alt="Expense Tracking">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Financial Admin</span>
+                    <h3>Expense Tracking & Analysis</h3>
+                    <p>Custom-built dashboard for real-time spending oversight, automated categorization, and budget reconciliation.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/payroll_management.png" alt="Payroll Management">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Human Resources</span>
+                    <h3>Payroll Management</h3>
+                    <p>End-to-end payroll processing including tax compliance, benefit deductions, and secure disbursement tracking.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/cashflow.jpg" alt="Cash Flow Statement">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">QuickBooks Online</span>
+                    <h3>Cash Flow Statement</h3>
+                    <p>Monitoring liquidity through detailed tracking of operating, investing, and financing activities.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/progress_billing.png" alt="Progress Billing">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Accounts Receivable</span>
+                    <h3>Progress Billing & Invoicing</h3>
+                    <p>Managing long-term project financials through milestone-based billing and AR tracking for service firms.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item zoomable">
+                <div class="portfolio-img-container">
+                    <img src="qbo/expense_categorization.png" alt="Expense Categorization">
+                    <div class="portfolio-overlay"><span class="view-btn">Full Preview</span></div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bookkeeping Cleanup</span>
+                    <h3>Strategic Categorization</h3>
+                    <p>Detailed cleanup and classification of business transactions to ensure tax-ready financial records and clean audits.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="tools">
+    <div class="container">
+        <h2>Tech Stack</h2>
+        <div class="tools">
+            <div class="tool"><img src="logos/Quickbooks.jpg" alt="QuickBooks"><p>QuickBooks (Learning)</p></div>
+            <div class="tool"><img src="logos/Microsoft_Excel.jpg" alt="Excel"><p>Excel</p></div>
+            <div class="tool"><img src="logos/Google_Workspace.jpg" alt="Google Workspace"><p>Workspace</p></div>
+            <div class="tool"><img src="logos/ChatGPT.jpg" alt="ChatGPT"><p>ChatGPT</p></div>
+            <div class="tool"><img src="logos/Canva.jpg" alt="Canva"><p>Canva</p></div>
+            <div class="tool"><img src="logos/Microsoft_365.jpg" alt="Microsoft 365"><p>Microsoft 365</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="certifications">
+    <div class="container">
+        <div id="cert-inner">
+            <h2>Professional Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card zoomable"><img src="certificates/Diploma_in_Financial_Accounting.png" alt="Diploma in Financial Accounting"><h3>Financial Accounting</h3><p>Alison</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Accounting_Basics.png" alt="Accounting Basics"><h3>Accounting Basics</h3><p>Alison</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Introduction_to_Bookkeeping.png" alt="Introduction to Bookkeeping"><h3>Intro to Bookkeeping</h3><p>TESDA</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Journalizing_Transactions.png" alt="Journalizing Transactions"><h3>Journalizing</h3><p>TESDA</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Accounts_Receivable_Management.png" alt="Accounts Receivable Management"><h3>AR Management</h3><p>Alison</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Google_Workspace_Features_and_Applications.png" alt="Google Workspace"><h3>Google Workspace</h3><p>Alison</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Gmail_Calendar_for_Business_Masterclass.png" alt="Gmail Calendar Masterclass"><h3>Gmail & Calendar</h3><p>Alison</p></div>
+                <div class="cert-card zoomable"><img src="certificates/Canva_Visual_Suite.png" alt="Canva Visual Suite"><h3>Canva Suite</h3><p>Canva</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item"><div class="faq-question"><span>Do you offer trial work?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes. I offer a 1-week paid trial to ensure workflow compatibility.</div></div>
+            <div class="faq-item">
+                <div class="faq-question"><span>How do you handle QuickBooks if you are currently learning it?</span><i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">While I am perfecting the software interface, I have a strong foundation in <strong>Accounting Fundamentals</strong>. I understand debits, credits, and the accounting cycle. The "learning" is simply mastering the QuickBooks system shortcuts—the math and accuracy behind your reports remain my top priority.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>What is the financial advantage of hiring you now?</span><i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Hiring me at this stage allows you to get high-level administrative support at a <strong>growth-friendly rate</strong>. You receive an operational partner who already understands financial logic, saving you the high cost of a senior firm while getting the same level of care.</div>
+            </div>
+            <div class="faq-item"><div class="faq-question"><span>Which timezones do you support?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">I work with businesses across US, UK, and Australian timezones.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>Payment methods?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Payments can be made via bank transfer or PayPal depending on agreement.</div></div>
+        </div>
+    </div>
+</section>
+
+
+<div class="cta-wrapper" id="contact">
+    <div class="cta-box">
+        <h2>Let's Organize Your Growth</h2>
+        <p>Ready to delegate your administrative burden and focus on scaling?</p>
+        <a href="https://cal.com/michgonzalesva" target="_blank" class="btn-cta"><i class="fas fa-calendar-check"></i> Book Discovery Call</a>
+        <div class="cta-contact-grid">
+            <a href="mailto:michgonzales.career@gmail.com" class="cta-contact-item"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://wa.me/639654033089" target="_blank" class="cta-contact-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.linkedin.com/in/michgonzalesva" target="_blank" class="cta-contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/639654033089" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+<div id="imageModal" class="modal">
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+</div>
+
+<script>
+const sections = document.querySelectorAll("section, .cta-wrapper");
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add("visible"); } });
+},{ threshold: 0.1 });
+sections.forEach(section=>observer.observe(section));
+
+document.querySelectorAll(".faq-item").forEach(item=>{
+  item.addEventListener("click", ()=>{ item.classList.toggle("active"); });
+});
+
+/* Lightbox Script */
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const captionText = document.getElementById("caption");
+
+document.querySelectorAll(".zoomable").forEach(item => {
+    item.onclick = function() {
+        const img = this.querySelector("img");
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+    }
+});
+
+modal.onclick = () => { modal.style.display = "none"; };
+</script>
+</body>
+</html>
