@@ -231,9 +231,7 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
 <section id="portfolio" class="portfolio-section">
     <div class="container">
         <h2 class="section-title">Professional Work Samples</h2>
-        <p class="section-subtitle">A showcase of specialized financial reporting, operational bookkeeping, and executive administrative support.</p>
-
-        <div class="portfolio-grid">
+                <div class="portfolio-grid">
 
             <div class="portfolio-item zoomable">
                 <div class="portfolio-img-container">
