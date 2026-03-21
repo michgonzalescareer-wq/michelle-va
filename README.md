@@ -353,7 +353,7 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
         </a>
         <div class="cta-contact-grid">
             <a href="mailto:mitchgonzales.career@gmail.com" class="cta-contact-item">
-                <i class="fas fa-envelope"></i> mitchgonzales.career@gmail.com
+                <i class="fas fa-envelope"></i> michgonzales.career@gmail.com
             </a>
             <a href="https://wa.me/639654033089" target="_blank" class="cta-contact-item">
                 <i class="fab fa-whatsapp"></i> +63 965 403 3089
