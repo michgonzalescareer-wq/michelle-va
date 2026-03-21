@@ -222,7 +222,6 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
         <h2>Sample Works & Reports</h2>
         <div class="portfolio-grid">
 
-            <!-- Profit & Loss -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
                     <img src="qbo/profitandloss.jpg" alt="Profit & Loss Statement">
@@ -230,11 +229,10 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Profit & Loss Statement</h3>
-                    <p>Mock monthly Profit & Loss report showing income, expenses, and net profit for a sample business.</p>
+                    <p>A comprehensive overview of monthly revenue and expenditures, providing clear insights into operational profitability.</p>
                 </div>
             </div>
 
-            <!-- Balance Sheet -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
                     <img src="qbo/balancesheet.jpg" alt="Balance Sheet">
@@ -242,19 +240,29 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Balance Sheet</h3>
-                    <p>Demonstrates assets, liabilities, and equity to show overall financial position for a sample company.</p>
+                    <p>Detailed snapshot of company assets, liabilities, and equity, ensuring an accurate view of the business's financial position.</p>
                 </div>
             </div>
 
-            <!-- Cash Flow -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
                     <img src="qbo/cashflow.jpg" alt="Cash Flow Statement">
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Cash Flow Statement</h3>
-                    <p>Shows cash inflows and outflows, illustrating healthy cash management and operational insights.</p>
+                    <h3>Statement of Cash Flows</h3>
+                    <p>Analysis of cash movement through operating, investing, and financing activities to monitor liquidity and business health.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-img-container">
+                    <img src="qbo/transaction_report.jpg" alt="QBO Transaction Report">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">QuickBooks Online</span>
+                    <h3>General Ledger & Transactions</h3>
+                    <p>Meticulous categorization of daily business transactions and ledger maintenance for audit-ready financial records.</p>
                 </div>
             </div>
 
