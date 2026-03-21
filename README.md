@@ -222,9 +222,10 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
         <h2>Sample Works & Reports</h2>
         <div class="portfolio-grid">
 
+            <!-- Profit & Loss -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
-                    <img src="portfolio/pl_report.jpg" alt="Profit & Loss Statement">
+                    <img src="qbo/profitandloss.jpg" alt="Profit & Loss Statement">
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
@@ -233,9 +234,10 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 </div>
             </div>
 
+            <!-- Balance Sheet -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
-                    <img src="portfolio/balance_sheet.jpg" alt="Balance Sheet">
+                    <img src="qbo/balancesheet.jpg" alt="Balance Sheet">
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
@@ -244,9 +246,10 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 </div>
             </div>
 
+            <!-- Cash Flow -->
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
-                    <img src="portfolio/cashflow_report.jpg" alt="Cash Flow Statement">
+                    <img src="qbo/cashflow.jpg" alt="Cash Flow Statement">
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
