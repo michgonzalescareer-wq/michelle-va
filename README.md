@@ -229,18 +229,18 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
                     <h3>Profit & Loss Statement</h3>
-                    <p>A comprehensive overview of monthly revenue and expenditures, providing clear insights into operational profitability.</p>
+                    <p>Generated monthly financial reports to track net income and operating expenses accurately.</p>
                 </div>
             </div>
 
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
-                    <img src="qbo/balancesheet.jpg" alt="Balance Sheet">
+                    <img src="qbo/balancesheet.jpg" alt="Expense Recording">
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Balance Sheet</h3>
-                    <p>Detailed snapshot of company assets, liabilities, and equity, ensuring an accurate view of the business's financial position.</p>
+                    <h3>Expense Categorization</h3>
+                    <p>Organization of daily transactions into proper chart of accounts for tax readiness.</p>
                 </div>
             </div>
 
@@ -250,19 +250,19 @@ header p { opacity: 0.9; font-size: 1.1rem; padding: 0 20px; }
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>Statement of Cash Flows</h3>
-                    <p>Analysis of cash movement through operating, investing, and financing activities to monitor liquidity and business health.</p>
+                    <h3>Cash Flow Management</h3>
+                    <p>Monitoring cash inflows and outflows to ensure business liquidity and operational health.</p>
                 </div>
             </div>
 
             <div class="portfolio-item">
                 <div class="portfolio-img-container">
-                    <img src="qbo/transaction_report.jpg" alt="QBO Transaction Report">
+                    <img src="qbo/ar_aging.jpg" alt="A/R Aging">
                 </div>
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">QuickBooks Online</span>
-                    <h3>General Ledger & Transactions</h3>
-                    <p>Meticulous categorization of daily business transactions and ledger maintenance for audit-ready financial records.</p>
+                    <span class="portfolio-tag">Financial Tracking</span>
+                    <h3>A/R Aging Reports</h3>
+                    <p>Monitoring outstanding invoices to ensure healthy cash flow and timely payments.</p>
                 </div>
             </div>
 
